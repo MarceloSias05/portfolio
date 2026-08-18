@@ -23,10 +23,14 @@ export type ProjectEntry = {
   link?: ExternalLink
   stack: string[]
   highlights: string[]
-  /** Spans the full grid row with the image side by side. */
-  featured?: boolean
-  /** Spans the full grid row with the image stacked above the text. */
+  /** Spans the full grid row with the media stacked above the text. */
   wide?: boolean
+  /** Replaces the still image with a player that starts once scrolled into view. */
+  video?: {
+    id: string
+    label: string
+    poster: string
+  }
   image?: {
     src: string
     alt: string
@@ -114,13 +118,13 @@ export const projects: ProjectEntry[] = [
     context: 'Banorte',
     dates: 'Feb 2026 – Jun 2026',
     link: { label: 'portfolio.cocoly.app', href: 'https://portfolio.cocoly.app' },
-    image: {
-      src: '/projects/lere.jpg',
-      alt: 'LeRe documentation suite, showing the generated project portfolio',
-      fit: 'screen',
+    video: {
+      id: 'CkEhiust5QM',
+      label: 'Play the LeRe walkthrough',
+      poster: '/projects/lere.jpg',
     },
     stack: ['Python', 'Pydantic', 'LLM agents', 'OpenRouter', 'Gemini'],
-    featured: true,
+    wide: true,
     highlights: [
       'Multi-agent system where each artifact — SRS, tech stack recommendation, milestones, architecture diagrams — is produced by a specialized LLM agent orchestrated over shared project context.',
       'Owned the Tech Stack agent end to end: a two-phase generation pipeline returning Pydantic-validated structured output, re-validating every user edit against a curated technology catalog before persisting.',
