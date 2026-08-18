@@ -1,0 +1,6 @@
+# Local state and logs from the gstack browser tool. Regenerated on every run and
+# specific to one machine, so it never belongs in the repo.
+.gstack/
+
+# macOS
+.DS_Store
