@@ -21,8 +21,8 @@ export function Hero() {
             className="hero-avatar"
             src={profile.photo}
             alt="Marcelo Sias"
-            width={72}
-            height={72}
+            width={136}
+            height={136}
           />
           <p className="hero-eyebrow">
             monterrey.mx <span className="accent">→</span> naples.it · 2026

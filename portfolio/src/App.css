@@ -79,12 +79,12 @@
 
 .hero-avatar {
   display: block;
-  width: 72px;
-  height: 72px;
+  width: clamp(104px, 11vw, 136px);
+  height: clamp(104px, 11vw, 136px);
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 1.5rem;
-  box-shadow: 0 0 0 2px var(--paper), 0 0 0 4px var(--rosa);
+  box-shadow: 0 0 0 3px var(--paper), 0 0 0 6px var(--rosa);
 }
 
 .hero-eyebrow {
