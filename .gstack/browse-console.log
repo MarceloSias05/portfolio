@@ -1,0 +1,19 @@
+[2026-08-18T21:06:14.466Z] [error] Failed to load resource: the server responded with a status of 401 (Unauthorized)
+[2026-08-18T21:06:18.760Z] [error] Failed to load resource: the server responded with a status of 999 ()
+[2026-08-18T21:06:19.301Z] [verbose] [DOM] Input elements should have autocomplete attributes (suggested: "username"): (More info: https://goo.gl/9p2vKq) %o
+[2026-08-18T21:06:24.622Z] [warning] Element with id: dust-var-locale not found
+[2026-08-18T21:06:25.557Z] [warning] [GSI_LOGGER]: Your client application may not display the Google One Tap in its default position. When FedCM becomes mandatory, One Tap only displays in the default position. Refer to the migration guide to update your code accordingly and opt-in to FedCM to test your changes. Learn more: https://developers.google.com/identity/gsi/web/guides/fedcm-migration?s=dc#layout
+[2026-08-18T21:06:25.557Z] [warning] [GSI_LOGGER]: Your client application uses one of the Google One Tap prompt UI status methods that may stop functioning when FedCM becomes mandatory. Refer to the migration guide to update your code accordingly and opt-in to FedCM to test your changes. Learn more: https://developers.google.com/identity/gsi/web/guides/fedcm-migration?s=dc#display_moment and https://developers.google.com/identity/gsi/web/guides/fedcm-migration?s=dc#skipped_moment
+[2026-08-18T21:06:25.557Z] [warning] [GSI_LOGGER]: Currently, you disable FedCM on Google One Tap. FedCM for One Tap will become mandatory starting Oct 2024, and you won’t be able to disable it. Refer to the migration guide to update your code accordingly to ensure users will not be blocked from logging in. Learn more: https://developers.google.com/identity/gsi/web/guides/fedcm-migration
+[2026-08-18T21:06:25.557Z] [warning] [GSI_LOGGER]: Currently, you disable FedCM on Google One Tap. FedCM for One Tap will become mandatory starting Oct 2024, and you won’t be able to disable it. Refer to the migration guide to update your code accordingly to ensure users will not be blocked from logging in. Learn more: https://developers.google.com/identity/gsi/web/guides/fedcm-migration
+[2026-08-18T21:06:27.131Z] [endGroup] EvalError
+    at qo (https://client.protechts.net/PXdOjV695v/main.min.js:2:69333)
+    at sq (https://client.protechts.net/PXdOjV695v/main.min.js:2:75208)
+    at LP (https://client.protechts.net/PXdOjV695v/main.min.js:2:237817)
+    at LN (https://client.protechts.net/PXdOjV695v/main.min.js:2:237441)
+    at https://client.protechts.net/PXdOjV695v/main.min.js:2:239195
+    at https://client.protechts.net/PXdOjV695v/main.min.js:2:239201
+    at https://client.protechts.net/PXdOjV695v/main.min.js:2:239666
+[2026-08-18T21:06:27.620Z] [info] Slow network is detected. See https://www.chromestatus.com/feature/5636954674692096 for more details. Fallback font will be used while loading: https://fonts.gstatic.com/s/googlesans/v62/4UaRrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iq2vgCIhM907w.woff2
+[2026-08-18T21:06:27.735Z] [debug] TMS load event sent successfully: 
+[2026-08-18T21:07:41.270Z] [error] Failed to load resource: the server responded with a status of 520 ()

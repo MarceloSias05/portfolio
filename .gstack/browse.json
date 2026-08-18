@@ -1,8 +1,8 @@
 {
-  "pid": 18794,
-  "port": 11039,
-  "token": "86286938-4c6d-477d-8c01-453f0ee2d365",
-  "startedAt": "2026-08-18T20:57:17.016Z",
+  "pid": 20137,
+  "port": 34567,
+  "token": "4363559f-78f6-44ae-a261-9ca696adcfcd",
+  "startedAt": "2026-08-18T21:06:11.310Z",
   "serverPath": "/Users/arnoldomarcelo/.claude/skills/gstack/browse/src/server.ts",
-  "mode": "launched"
+  "mode": "headed"
 }
