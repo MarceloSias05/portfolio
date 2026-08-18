@@ -14,6 +14,10 @@ a small design-token system.
   ExperienceList, Projects, Skills, Education, Footer).
 - `src/index.css` — design tokens (palette, type, layout) and base styles.
 - `src/App.css` — component styles.
+- `public/projects/` — project captures. Reference them from `profile.ts` via the
+  `image` field; `fit: 'screen'` crops wide site captures, `fit: 'device'` keeps a
+  full phone mockup visible on its own ground.
+- `public/logos/` — organization marks, referenced via the `logo` field.
 
 ## Develop
 

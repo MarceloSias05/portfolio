@@ -6,6 +6,9 @@ export function ExperienceList({ entries }: { entries: ExperienceEntry[] }) {
       {entries.map((xp) => (
         <article className="xp-item" key={xp.company + xp.dates}>
           <div className="xp-meta">
+            {xp.logo && (
+              <img className="org-logo" src={xp.logo} alt="" aria-hidden="true" />
+            )}
             {xp.dates}
             <br />
             {xp.location}
@@ -26,6 +29,12 @@ export function ExperienceList({ entries }: { entries: ExperienceEntry[] }) {
                   </span>
                 ))}
               </div>
+            )}
+            {xp.photo && (
+              <figure className="xp-photo">
+                <img src={xp.photo.src} alt={xp.photo.alt} loading="lazy" />
+                <figcaption>{xp.photo.caption}</figcaption>
+              </figure>
             )}
           </div>
         </article>

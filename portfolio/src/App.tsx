@@ -6,6 +6,7 @@ import { ExperienceList } from './components/ExperienceList'
 import { Projects } from './components/Projects'
 import { Skills } from './components/Skills'
 import { Education } from './components/Education'
+import { Certifications } from './components/Certifications'
 import { Footer } from './components/Footer'
 import { experience, leadership } from './data/profile'
 
@@ -29,6 +30,9 @@ function App() {
         </Section>
         <Section id="education" sectionKey="education" title="Where I'm learning">
           <Education />
+        </Section>
+        <Section id="certifications" sectionKey="certifications" title="Extra credit">
+          <Certifications />
         </Section>
       </main>
       <Footer />

@@ -17,6 +17,13 @@ export function Hero() {
     <header className="hero container" id="top">
       <div className="hero-grid">
         <div className="hero-copy">
+          <img
+            className="hero-avatar"
+            src={profile.photo}
+            alt="Marcelo Sias"
+            width={72}
+            height={72}
+          />
           <p className="hero-eyebrow">
             monterrey.mx <span className="accent">→</span> naples.it · 2026
           </p>

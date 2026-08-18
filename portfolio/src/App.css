@@ -77,6 +77,16 @@
   }
 }
 
+.hero-avatar {
+  display: block;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 0 2px var(--paper), 0 0 0 4px var(--rosa);
+}
+
 .hero-eyebrow {
   font-family: var(--font-mono);
   font-size: 0.8rem;
@@ -300,6 +310,18 @@
   line-height: 1.9;
 }
 
+.org-logo {
+  display: block;
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #fff;
+  border: 1px solid var(--line);
+  padding: 4px;
+  margin-bottom: 0.6rem;
+}
+
 .xp-company {
   font-family: var(--font-display);
   font-size: 1.15rem;
@@ -335,6 +357,27 @@
   margin-top: 0.85rem;
 }
 
+.xp-photo {
+  margin: 1.1rem 0 0;
+  max-width: 22rem;
+}
+
+.xp-photo img {
+  display: block;
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+}
+
+.xp-photo figcaption {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--ink-soft);
+  margin-top: 0.5rem;
+}
+
 .chip {
   font-family: var(--font-mono);
   font-size: 0.72rem;
@@ -349,8 +392,14 @@
 
 .projects-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.25rem;
+}
+
+@media (max-width: 980px) {
+  .projects-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media (max-width: 780px) {
@@ -362,11 +411,10 @@
 .project-card {
   border: 1px solid var(--line);
   border-radius: 10px;
-  padding: 1.5rem;
   background: #fff;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  gap: 0.85rem;
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
@@ -375,8 +423,71 @@
   box-shadow: 0 12px 32px -20px rgba(214, 36, 110, 0.35);
 }
 
+.project-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
 .project-card.featured {
   grid-column: 1 / -1;
+  flex-direction: row;
+  align-items: stretch;
+}
+
+.project-card.featured .project-shot {
+  flex: 0 0 42%;
+  border-bottom: none;
+  border-right: 1px solid var(--line);
+}
+
+.project-card.featured .project-body {
+  flex: 1;
+}
+
+@media (max-width: 780px) {
+  .project-card.featured {
+    flex-direction: column;
+  }
+
+  .project-card.featured .project-shot {
+    flex: none;
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+  }
+}
+
+/* project imagery */
+
+.project-shot {
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.project-shot img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* live-site captures: crop to a wide band, anchored top-left */
+.shot-screen img {
+  object-position: left top;
+  min-height: 220px;
+}
+
+/* phone mockups: show the whole device on its own ground */
+.shot-device {
+  background: linear-gradient(160deg, #f2f0ea 0%, #e9e6dd 100%);
+}
+
+.shot-device img {
+  height: 260px;
+  object-fit: contain;
+  object-position: center;
+  padding: 1.25rem 1rem 0;
 }
 
 .project-top {
@@ -500,6 +611,10 @@
   padding: 1.5rem;
 }
 
+.edu-card .org-logo {
+  margin-bottom: 1rem;
+}
+
 .edu-school {
   font-size: 1.1rem;
   font-weight: 650;
@@ -521,6 +636,38 @@
 
 .edu-meta .accent {
   color: var(--cactus);
+}
+
+/* ---------- certifications ---------- */
+
+.cert-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding-block: 0.9rem;
+}
+
+.cert-row + .cert-row {
+  border-top: 1px dashed var(--line);
+}
+
+.cert-main {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.cert-name {
+  font-weight: 600;
+  font-size: 0.98rem;
+}
+
+.cert-meta {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--ink-soft);
 }
 
 /* ---------- footer / contact ---------- */
