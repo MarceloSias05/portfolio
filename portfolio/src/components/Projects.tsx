@@ -1,0 +1,45 @@
+import { projects } from '../data/profile'
+
+export function Projects() {
+  return (
+    <div className="projects-grid">
+      {projects.map((p) => (
+        <article
+          className={p.featured ? 'project-card featured' : 'project-card'}
+          key={p.name}
+        >
+          <div className="project-top">
+            <h3 className="project-name">{p.name}</h3>
+            <span className="project-context">
+              {p.context} · {p.dates}
+            </span>
+          </div>
+          {p.award && <span className="award">{p.award}</span>}
+          <p className="project-tagline">{p.tagline}</p>
+          <ul className="project-highlights">
+            {p.highlights.map((h) => (
+              <li key={h}>{h}</li>
+            ))}
+          </ul>
+          <div className="chip-row">
+            {p.stack.map((s) => (
+              <span className="chip" key={s}>
+                {s}
+              </span>
+            ))}
+          </div>
+          {p.link && (
+            <a
+              className="project-link"
+              href={p.link.href}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {p.link.label} ↗
+            </a>
+          )}
+        </article>
+      ))}
+    </div>
+  )
+}
