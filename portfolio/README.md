@@ -16,7 +16,12 @@ a small design-token system.
 - `src/App.css` — component styles.
 - `public/projects/` — project captures. Reference them from `profile.ts` via the
   `image` field; `fit: 'screen'` crops wide site captures, `fit: 'device'` keeps a
-  full phone mockup visible on its own ground.
+  full phone mockup visible on its own ground, `fit: 'showcase'` runs a wide panel
+  full-bleed across the top of the card.
+- A project's `video` field replaces the still with a player. The poster image shows
+  until the card scrolls into view, then the YouTube embed loads and starts — muted,
+  which is what browsers require to start without a click. Readers who set
+  `prefers-reduced-motion` get the poster and press play themselves.
 - `public/logos/` — organization marks, referenced via the `logo` field.
 
 ## Develop

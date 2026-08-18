@@ -528,6 +528,50 @@
   border-bottom: 6px solid transparent;
 }
 
+/* sits clear of the YouTube control bar along the bottom */
+.video-sound {
+  position: absolute;
+  top: 0.9rem;
+  right: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: #fff;
+  background: rgba(21, 24, 26, 0.82);
+  border: 0;
+  border-radius: 999px;
+  padding: 0.5rem 0.95rem;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: background 0.15s ease;
+}
+
+.video-sound:hover {
+  background: var(--rosa);
+}
+
+.video-sound-mark {
+  position: relative;
+  width: 0;
+  height: 0;
+  border-right: 8px solid currentColor;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+}
+
+.video-sound-mark::after {
+  content: '';
+  position: absolute;
+  left: 1px;
+  top: -5px;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid currentColor;
+  border-radius: 50%;
+}
+
 /* project imagery */
 
 .project-shot {
