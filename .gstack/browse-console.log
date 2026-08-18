@@ -17,3 +17,9 @@
 [2026-08-18T21:06:27.620Z] [info] Slow network is detected. See https://www.chromestatus.com/feature/5636954674692096 for more details. Fallback font will be used while loading: https://fonts.gstatic.com/s/googlesans/v62/4UaRrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iq2vgCIhM907w.woff2
 [2026-08-18T21:06:27.735Z] [debug] TMS load event sent successfully: 
 [2026-08-18T21:07:41.270Z] [error] Failed to load resource: the server responded with a status of 520 ()
+[2026-08-18T21:10:10.445Z] [verbose] [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o
+[2026-08-18T21:10:10.454Z] [log] %c%s color: red; background: yellow; font-size: 24px; WARNING!
+[2026-08-18T21:10:10.454Z] [log] %c%s font-size: 18px; Using this console may allow attackers to impersonate you and steal your information using an attack called Self-XSS.
+Do not enter or paste code that you do not understand.
+[2026-08-18T21:10:28.781Z] [verbose] [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o
+[2026-08-18T21:10:40.484Z] [error] Failed to load resource: the server responded with a status of 502 ()
