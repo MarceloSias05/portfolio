@@ -23,12 +23,18 @@ export type ProjectEntry = {
   link?: ExternalLink
   stack: string[]
   highlights: string[]
+  /** Spans the full grid row with the image side by side. */
   featured?: boolean
+  /** Spans the full grid row with the image stacked above the text. */
+  wide?: boolean
   image?: {
     src: string
     alt: string
-    /** 'screen' crops to a wide frame; 'device' preserves the full phone mockup. */
-    fit: 'screen' | 'device'
+    /**
+     * 'screen' crops to a wide frame, 'device' preserves a full phone mockup,
+     * 'showcase' runs the image full-bleed across the top of a wide card.
+     */
+    fit: 'screen' | 'device' | 'showcase'
   }
 }
 
@@ -128,14 +134,25 @@ export const projects: ProjectEntry[] = [
     context: 'Swift Change Makers · Enactus & Apple',
     dates: 'May 2026',
     award: '1st place · National (60 teams, 12 iOS Labs)',
+    wide: true,
     image: {
       src: '/projects/mabe.jpg',
-      alt: 'Mabe Flow launch screen on iPhone',
-      fit: 'device',
+      alt: 'Mabe Flow feature overview: MIRA chatbot, smart requests, HR escalation, operations dashboard, TraceFlow status trail and push alerts',
+      fit: 'showcase',
     },
-    stack: ['SwiftUI', 'SwiftData', 'Swift Charts', 'AVFoundation', 'Foundation Models'],
+    stack: [
+      'SwiftUI',
+      'SwiftData',
+      'Swift Charts',
+      'AVFoundation',
+      'Foundation Models',
+      'Core ML',
+    ],
     highlights: [
       'On-device generative AI with Foundation Models and vector search via Ventura Kit — private by default, no round trips to a server.',
+      'MIRA, the in-app assistant, answers policy questions around the clock and backs each reply with the real company document it came from.',
+      'TraceFlow gives every request a live status trail and audit log, paired with an operations dashboard of indicators, predictions and delay alerts.',
+      'Approvals stay human: escalations route to HR with full context instead of the assistant deciding on its own.',
       'National winner among 60 teams across 12 iOS Labs in Mexico.',
     ],
   },

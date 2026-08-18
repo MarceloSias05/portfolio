@@ -5,7 +5,13 @@ export function Projects() {
     <div className="projects-grid">
       {projects.map((p) => (
         <article
-          className={p.featured ? 'project-card featured' : 'project-card'}
+          className={[
+            'project-card',
+            p.featured && 'featured',
+            p.wide && 'wide',
+          ]
+            .filter(Boolean)
+            .join(' ')}
           key={p.name}
         >
           {p.image && (
