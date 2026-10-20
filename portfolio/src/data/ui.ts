@@ -51,7 +51,8 @@ export const ui = {
     close: tx('Close', 'Cerrar'),
     prev: tx('Previous screen', 'Pantalla anterior'),
     next: tx('Next screen', 'Pantalla siguiente'),
-    screen: tx('Screen', 'Pantalla'),
+    item: tx('Go to', 'Ir a'),
+    photos: tx('photos', 'fotos'),
   },
   video: {
     sound: tx('Turn on sound', 'Activar sonido'),

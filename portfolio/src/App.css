@@ -766,12 +766,12 @@
   padding: 1rem;
 }
 
-.viewer-phone {
+.viewer-media {
   cursor: grab;
   touch-action: pan-y;
 }
 
-.viewer-phone:active {
+.viewer-media:active {
   cursor: grabbing;
 }
 
@@ -864,6 +864,15 @@
 
 .viewer-next {
   right: clamp(0.5rem, 4vw, 3rem);
+}
+
+.viewer-photo img {
+  display: block;
+  max-width: min(88vw, 1100px);
+  max-height: 74svh;
+  border-radius: 18px;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 /* on phones the swipe and the dots do the work; the arrows would cover the screen */
@@ -1333,26 +1342,52 @@
   margin-top: 1rem;
 }
 
-.xp-photo {
-  margin: 1.5rem 0 0;
-  max-width: 26rem;
+.photo-strip {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  padding-bottom: 0.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  scrollbar-width: thin;
 }
 
-.xp-photo img {
-  display: block;
+.photo-strip-item {
+  flex: 0 0 auto;
+  height: clamp(150px, 18vw, 200px);
+  aspect-ratio: 4 / 3;
+  padding: 0;
+  border: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--gray);
+  cursor: zoom-in;
+  scroll-snap-align: start;
+}
+
+.photo-strip-item img {
   width: 100%;
-  border-radius: 18px;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease-out);
 }
 
-.xp-photo figcaption {
-  font-size: 0.8rem;
-  color: var(--fg-soft);
-  margin-top: 0.6rem;
+@media (hover: hover) {
+  .photo-strip-item:hover img {
+    transform: scale(1.04);
+  }
+}
+
+.photo-strip-item:focus-visible {
+  outline: 3px solid var(--link);
+  outline-offset: 2px;
 }
 
 @media (max-width: 760px) {
   .xp-item {
-    grid-template-columns: 1fr;
+    /* minmax(0, …) so the photo strip scrolls instead of widening the page */
+    grid-template-columns: minmax(0, 1fr);
     gap: 1rem;
   }
 

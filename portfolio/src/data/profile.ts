@@ -16,7 +16,8 @@ export type ExperienceEntry = {
   stack?: string[]
   logo?: string
   link?: ExternalLink
-  photo?: { src: string; alt: Text; caption: Text }
+  /** A strip of photos that open full screen on click. */
+  photos?: { src: string; caption: Text }[]
 }
 
 export type ProjectEntry = {
@@ -502,14 +503,18 @@ export const leadership: ExperienceEntry[] = [
         'La SEITC fue nombrada Sociedad Sobresaliente en Orgullo CSE — el máximo reconocimiento para una sociedad de alumnos en el Tec — al cierre de la gestión.',
       ),
     ],
-    photo: {
-      src: '/projects/seitc-award.jpg',
-      alt: tx(
-        'Orgullo CSE trophy and innovation certificate awarded to SEITC',
-        'Trofeo Orgullo CSE y certificado de innovación otorgados a la SEITC',
-      ),
-      caption: tx('Orgullo CSE · Sociedad Sobresaliente', 'Orgullo CSE · Sociedad Sobresaliente'),
-    },
+    photos: [
+      { src: '/seitc/award.jpg', caption: tx('Orgullo CSE · Sociedad Sobresaliente', 'Orgullo CSE · Sociedad Sobresaliente') },
+      { src: '/seitc/orgullo-cse.jpg', caption: tx('The night SEITC was named Sociedad Sobresaliente.', 'La noche en que la SEITC fue nombrada Sociedad Sobresaliente.') },
+      { src: '/seitc/ama-panel.jpg', caption: tx('Ask Me Anything panel at Tec de Monterrey.', 'Panel Ask Me Anything en el Tec de Monterrey.') },
+      { src: '/seitc/bloomberg.jpg', caption: tx('Bloomberg Tech Lab on campus.', 'Bloomberg Tech Lab en el campus.') },
+      { src: '/seitc/hackathon.jpg', caption: tx('Hackathon day at Tec.', 'Día de hackathon en el Tec.') },
+      { src: '/seitc/workshop.jpg', caption: tx('A workshop for the CS community.', 'Un taller para la comunidad de CS.') },
+      { src: '/seitc/team.jpg', caption: tx('With the SEITC community.', 'Con la comunidad de la SEITC.') },
+      { src: '/seitc/planning.jpg', caption: tx('Planning with the team.', 'Planeando con el equipo.') },
+      { src: '/seitc/fetec.jpg', caption: tx('At FETEC.', 'En FETEC.') },
+      { src: '/seitc/campus-event.jpg', caption: tx('Behind the scenes at a campus event.', 'Detrás de cámaras en un evento del campus.') },
+    ],
   },
   {
     company: 'C.S. Student Association (SEITC)',

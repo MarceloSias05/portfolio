@@ -1,5 +1,8 @@
+import { useState } from 'react'
 import type { ExperienceEntry } from '../data/profile'
+import { ui } from '../data/ui'
 import { useLang } from '../i18n'
+import { Lightbox } from './Lightbox'
 import { Reveal } from './Reveal'
 
 export function ExperienceList({ entries }: { entries: ExperienceEntry[] }) {
@@ -45,15 +48,28 @@ export function ExperienceList({ entries }: { entries: ExperienceEntry[] }) {
                 {t(xp.link.label)} <span aria-hidden="true">↗</span>
               </a>
             )}
-            {xp.photo && (
-              <figure className="xp-photo">
-                <img src={xp.photo.src} alt={t(xp.photo.alt)} loading="lazy" />
-                <figcaption>{t(xp.photo.caption)}</figcaption>
-              </figure>
-            )}
+            {xp.photos && <PhotoStrip label={xp.company} photos={xp.photos} />}
           </div>
         </Reveal>
       ))}
     </div>
+  )
+}
+
+/** Photos in a row that scrolls sideways; any of them opens the full set. */
+function PhotoStrip({ label, photos }: { label: string; photos: NonNullable<ExperienceEntry['photos']> }) {
+  const { t } = useLang()
+  const [open, setOpen] = useState<number | null>(null)
+  return (
+    <>
+      <div className="photo-strip" aria-label={`${label} · ${photos.length} ${t(ui.gallery.photos)}`} role="group">
+        {photos.map((p, i) => (
+          <button key={p.src} type="button" className="photo-strip-item" onClick={() => setOpen(i)}>
+            <img src={p.src} alt={t(p.caption)} loading="lazy" draggable={false} />
+          </button>
+        ))}
+      </div>
+      <Lightbox label={label} items={photos} index={open} onIndex={setOpen} frame="photo" />
+    </>
   )
 }
