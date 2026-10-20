@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
+import { ui } from '../data/ui'
+import { useLang } from '../i18n'
 
 const EMBED_ORIGIN = 'https://www.youtube-nocookie.com'
 
@@ -9,6 +11,7 @@ type ProjectVideoProps = {
 }
 
 export function ProjectVideo({ id, label, poster }: ProjectVideoProps) {
+  const { t } = useLang()
   const frameRef = useRef<HTMLDivElement>(null)
   const iframeRef = useRef<HTMLIFrameElement>(null)
   const [playing, setPlaying] = useState(false)
@@ -81,7 +84,7 @@ export function ProjectVideo({ id, label, poster }: ProjectVideoProps) {
           {muted && (
             <button type="button" className="video-sound" onClick={turnOnSound}>
               <span className="video-sound-mark" aria-hidden="true" />
-              Turn on sound
+              {t(ui.video.sound)}
             </button>
           )}
         </>

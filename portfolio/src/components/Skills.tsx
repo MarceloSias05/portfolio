@@ -1,19 +1,20 @@
 import { skills } from '../data/profile'
+import { useLang } from '../i18n'
+import { Reveal } from './Reveal'
 
 export function Skills() {
+  const { t } = useLang()
   return (
-    <div className="skills-list">
-      {skills.map((group) => (
-        <div className="skill-group" key={group.label}>
-          <span className="skill-label">"{group.label}":</span>
-          <div className="skill-items">
+    <div className="skills-grid">
+      {skills.map((group, i) => (
+        <Reveal className="skill-card" key={group.label.en} delay={(i % 3) * 0.08}>
+          <h3 className="skill-label">{t(group.label)}</h3>
+          <ul className="skill-items">
             {group.items.map((item) => (
-              <span className="chip" key={item}>
-                {item}
-              </span>
+              <li key={item}>{item}</li>
             ))}
-          </div>
-        </div>
+          </ul>
+        </Reveal>
       ))}
     </div>
   )

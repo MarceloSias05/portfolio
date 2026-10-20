@@ -1,107 +1,82 @@
-import type { CSSProperties, ReactNode } from 'react'
+import { Fragment, useRef } from 'react'
+import { motion, useScroll, useTransform } from 'motion/react'
 import { profile } from '../data/profile'
+import { ui } from '../data/ui'
+import { useLang } from '../i18n'
 
-function Line({ step, children }: { step: number; children: ReactNode }) {
-  const style = { '--d': `${0.4 + step * 0.22}s` } as CSSProperties
-  return (
-    <div className="schema-line" style={style}>
-      {children}
-    </div>
-  )
-}
-
-const IN = <span className="indent" />
+const rise = { type: 'spring', bounce: 0, duration: 1.1 } as const
 
 export function Hero() {
-  return (
-    <header className="hero container" id="top">
-      <div className="hero-grid">
-        <div className="hero-copy">
-          <img
-            className="hero-avatar"
-            src={profile.photo}
-            alt="Marcelo Sias"
-            width={136}
-            height={136}
-          />
-          <p className="hero-eyebrow">
-            monterrey.mx <span className="accent">→</span> naples.it · 2026
-          </p>
-          <h1>
-            I build AI systems that <em>ship</em>.
-          </h1>
-          <p className="hero-lede">
-            Software engineer working across LLM agent pipelines, native iOS and
-            full-stack web — from watsonx assistants at IBM to national-winning
-            Swift apps. Computer Science at Tec de Monterrey; Apple Developer
-            Academy in Naples, next.
-          </p>
-          <div className="hero-actions">
-            <a className="btn btn-primary" href="#projects">
-              See projects
-            </a>
-            <a className="btn btn-quiet" href={`mailto:${profile.email}`}>
-              Get in touch
-            </a>
-          </div>
-        </div>
+  const { lang, t } = useLang()
+  const ref = useRef<HTMLElement>(null)
+  const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] })
+  // The hero recedes as the page scrolls over it, like a product page handing off.
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.9])
+  const opacity = useTransform(scrollYProgress, [0, 0.75], [1, 0])
 
-        <div className="schema-card" aria-label="Profile summary, styled as structured output">
-          <div className="schema-card-head">
-            <span>marcelo.profile</span>
-            <span>structured_output · v1</span>
-          </div>
-          <div className="schema-card-body">
-            <Line step={0}>{'{'}</Line>
-            <Line step={1}>
-              {IN}
-              <span className="schema-key">"name":</span>{' '}
-              <span className="schema-str">"Marcelo Sias"</span>,
-            </Line>
-            <Line step={2}>
-              {IN}
-              <span className="schema-key">"role":</span>{' '}
-              <span className="schema-enum">software_engineer</span>,
-            </Line>
-            <Line step={3}>
-              {IN}
-              <span className="schema-key">"focus":</span> [
-              <span className="schema-enum">llm_agents</span>,{' '}
-              <span className="schema-enum">swiftui</span>,{' '}
-              <span className="schema-enum">t3_stack</span>],
-            </Line>
-            <Line step={4}>
-              {IN}
-              <span className="schema-key">"base":</span>{' '}
-              <span className="schema-str">"Monterrey, MX"</span>,
-            </Line>
-            <Line step={5}>
-              {IN}
-              <span className="schema-key">"next_stop":</span>{' '}
-              <span className="schema-str">"Apple Developer Academy — Naples"</span>,
-            </Line>
-            <Line step={6}>
-              {IN}
-              <span className="schema-key">"languages":</span> [
-              <span className="schema-enum">es_MX</span>,{' '}
-              <span className="schema-enum">en</span>,{' '}
-              <span className="schema-enum">fr</span>],
-            </Line>
-            <Line step={7}>
-              {IN}
-              <span className="schema-key">"status":</span>{' '}
-              <span className="schema-enum">shipping</span>
-            </Line>
-            <Line step={8}>{'}'}</Line>
-            <Line step={9}>
-              <div className="schema-valid">
-                ✓ schema validated · 0 errors
-                <span className="caret" aria-hidden="true" />
-              </div>
-            </Line>
-          </div>
-        </div>
-      </div>
+  const words = t(ui.hero.headline).split(' ')
+
+  return (
+    <header ref={ref} className="hero tone-light" id="top">
+      <motion.div className="hero-inner container" style={{ scale, opacity }}>
+        <motion.img
+          className="hero-avatar"
+          src={profile.photo}
+          alt={profile.displayName}
+          width={112}
+          height={112}
+          initial={{ opacity: 0, scale: 0.85 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={rise}
+        />
+        <motion.p
+          className="eyebrow"
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ ...rise, delay: 0.1 }}
+        >
+          {t(ui.hero.eyebrow)} · {t(profile.location)}
+        </motion.p>
+        {/* Keyed by language so the headline plays again when it changes. */}
+        <h1 className="hero-title" key={lang}>
+          {/* The space sits outside the mask: trailing space inside an inline-block collapses. */}
+          {words.map((word, i) => (
+            <Fragment key={i}>
+              <span className="word-mask">
+                <motion.span
+                  className="word"
+                  initial={{ y: '110%' }}
+                  animate={{ y: 0 }}
+                  transition={{ ...rise, delay: 0.2 + i * 0.06 }}
+                >
+                  {word}
+                </motion.span>
+              </span>{' '}
+            </Fragment>
+          ))}
+        </h1>
+        <motion.p
+          className="hero-lede"
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ ...rise, delay: 0.6 }}
+        >
+          {t(ui.hero.lede)}
+        </motion.p>
+        <motion.div
+          className="hero-actions"
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ ...rise, delay: 0.75 }}
+        >
+          <a className="btn btn-primary" href="#cerca">
+            {t(ui.hero.primary)}
+          </a>
+          <a className="btn btn-link" href={profile.resume} download>
+            {t(ui.hero.resume)} <span aria-hidden="true">↓</span>
+          </a>
+        </motion.div>
+      </motion.div>
     </header>
   )
 }
