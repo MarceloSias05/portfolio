@@ -513,7 +513,7 @@ export const leadership: ExperienceEntry[] = [
       { src: '/seitc/workshop.jpg', caption: tx('A workshop for the CS community.', 'Un taller para la comunidad de CS.') },
       { src: '/seitc/planning.jpg', caption: tx('The IT team planning logistics and registrations for upcoming events.', 'El equipo de TI planeando logística y registros para próximos eventos.') },
       { src: '/seitc/fetec.jpg', caption: tx('At FETEC.', 'En FETEC.') },
-      { src: '/seitc/campus-event.jpg', caption: tx('At an international science competition, talking about the CS program with other students.', 'En un concurso internacional de ciencias, platicando de la carrera con otros estudiantes.') },
+      { src: '/seitc/campus-event.jpg', caption: tx('At an international science competition, talking about the CS program with high school students.', 'En un concurso internacional de ciencias, platicando de la carrera con estudiantes de preparatoria.') },
     ],
   },
   {
