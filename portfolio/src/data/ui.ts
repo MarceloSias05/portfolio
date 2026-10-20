@@ -46,6 +46,13 @@ export const ui = {
   project: {
     award: tx('Award', 'Premio'),
   },
+  gallery: {
+    open: tx('Explore the screens', 'Explorar las pantallas'),
+    close: tx('Close', 'Cerrar'),
+    prev: tx('Previous screen', 'Pantalla anterior'),
+    next: tx('Next screen', 'Pantalla siguiente'),
+    screen: tx('Screen', 'Pantalla'),
+  },
   video: {
     sound: tx('Turn on sound', 'Activar sonido'),
   },

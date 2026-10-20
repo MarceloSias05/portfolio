@@ -605,6 +605,318 @@
   }
 }
 
+/* ---------- iPhone gallery ---------- */
+
+.iphone {
+  --w: 260px;
+  position: relative;
+  width: var(--w);
+  padding: calc(var(--w) * 0.014);
+  border-radius: calc(var(--w) * 0.17);
+  /* titanium band */
+  background: linear-gradient(145deg, #8e8e93 0%, #3a3a3c 18%, #1c1c1e 50%, #48484a 82%, #8e8e93 100%);
+  box-shadow:
+    0 calc(var(--w) * 0.12) calc(var(--w) * 0.22) rgba(80, 30, 15, 0.28),
+    0 calc(var(--w) * 0.03) calc(var(--w) * 0.06) rgba(0, 0, 0, 0.18);
+}
+
+/* side button on the right, action + volume buttons on the left */
+.iphone::before,
+.iphone::after {
+  content: '';
+  position: absolute;
+  width: calc(var(--w) * 0.014);
+  background: #3a3a3c;
+}
+
+.iphone::before {
+  right: calc(var(--w) * -0.01);
+  top: 28%;
+  height: 13%;
+  border-radius: 0 3px 3px 0;
+}
+
+.iphone::after {
+  left: calc(var(--w) * -0.01);
+  top: 17%;
+  height: 5%;
+  border-radius: 3px 0 0 3px;
+  box-shadow:
+    0 calc(var(--w) * 0.2) 0 0 #3a3a3c,
+    0 calc(var(--w) * 0.4) 0 0 #3a3a3c;
+}
+
+.iphone-screen {
+  position: relative;
+  overflow: hidden;
+  padding: calc(var(--w) * 0.028);
+  border-radius: calc(var(--w) * 0.156);
+  background: #000;
+}
+
+.iphone-screen img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 828 / 1792;
+  object-fit: cover;
+  border-radius: calc(var(--w) * 0.128);
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.iphone-island {
+  position: absolute;
+  top: calc(var(--w) * 0.06);
+  left: 50%;
+  width: calc(var(--w) * 0.3);
+  height: calc(var(--w) * 0.088);
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: #000;
+}
+
+.gallery-stage {
+  container-type: inline-size;
+  position: relative;
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4cqw;
+  padding-bottom: 7cqw;
+  overflow: hidden;
+  background: radial-gradient(90% 80% at 50% 45%, #fbe3d6 0%, #f1e6e1 55%, #e8e8ed 100%);
+}
+
+.iphone-btn {
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: zoom-in;
+  transform: translateY(3cqw);
+  transition: transform 0.5s var(--ease-out);
+}
+
+.iphone-btn .iphone {
+  --w: 22cqw;
+}
+
+.iphone-btn.is-center {
+  transform: translateY(-1cqw);
+}
+
+.iphone-btn.is-center .iphone {
+  --w: 25cqw;
+}
+
+@media (hover: hover) {
+  .iphone-btn:hover {
+    transform: translateY(1cqw);
+  }
+
+  .iphone-btn.is-center:hover {
+    transform: translateY(-3cqw);
+  }
+}
+
+.iphone-btn:focus-visible {
+  outline: none;
+}
+
+.iphone-btn:focus-visible .iphone {
+  outline: 3px solid var(--link);
+  outline-offset: 4px;
+}
+
+.gallery-hint {
+  position: absolute;
+  bottom: 3.5cqw;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 980px;
+  padding: 0.35rem 0.85rem;
+  pointer-events: none;
+}
+
+.viewer {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.84);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  color: #f5f5f7;
+  overscroll-behavior: contain;
+}
+
+.viewer-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.1rem;
+  padding: 1rem;
+}
+
+.viewer-phone {
+  cursor: grab;
+  touch-action: pan-y;
+}
+
+.viewer-phone:active {
+  cursor: grabbing;
+}
+
+.viewer .iphone {
+  --w: min(calc(72svh * 0.44), 78vw, 360px);
+}
+
+.viewer-caption {
+  min-height: 1.5em;
+  max-width: 32ch;
+  text-align: center;
+  text-wrap: balance;
+  font-size: 1rem;
+  color: #d2d2d7;
+}
+
+.viewer-dots {
+  display: flex;
+  gap: 4px;
+}
+
+.viewer-dots button {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.viewer-dots button::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background: #636366;
+  transition:
+    width 0.4s var(--ease-out),
+    background-color 0.3s ease;
+}
+
+.viewer-dots button.is-active::before {
+  width: 22px;
+  background: #f5f5f7;
+}
+
+.viewer-btn {
+  position: absolute;
+  z-index: 1;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: #f5f5f7;
+  background: rgba(255, 255, 255, 0.14);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.viewer-btn:hover {
+  background: rgba(255, 255, 255, 0.26);
+}
+
+.viewer-btn:focus-visible {
+  outline: 2px solid #f5f5f7;
+  outline-offset: 2px;
+}
+
+.viewer-close {
+  top: max(1rem, env(safe-area-inset-top));
+  right: 1rem;
+  font-size: 1rem;
+}
+
+.viewer-prev,
+.viewer-next {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.viewer-prev {
+  left: clamp(0.5rem, 4vw, 3rem);
+}
+
+.viewer-next {
+  right: clamp(0.5rem, 4vw, 3rem);
+}
+
+/* on phones the swipe and the dots do the work; the arrows would cover the screen */
+@media (max-width: 600px) {
+  .viewer-prev,
+  .viewer-next {
+    display: none;
+  }
+}
+
+/* ---------- whole-card links ---------- */
+
+/* A card with a link opens it from anywhere on the card, in a new tab. */
+.has-link {
+  position: relative;
+  cursor: pointer;
+}
+
+/* a press-scale would make the link the containing block and shrink its hit area mid-click */
+.card-link:active {
+  transform: none;
+}
+
+.card-link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.has-link:hover .card-link {
+  text-decoration: underline;
+}
+
+/* media that has its own controls stays clickable above the card link */
+.has-link .gallery-stage,
+.has-link .project-video {
+  position: relative;
+  z-index: 2;
+}
+
+.inline-link {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: rgba(245, 245, 247, 0.35);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.2s ease;
+}
+
+.inline-link:hover {
+  text-decoration-color: currentColor;
+}
+
 /* ---------- projects ---------- */
 
 .projects-grid {
@@ -724,6 +1036,8 @@
   background: #fff4e5;
   border-radius: 980px;
   padding: 0.3rem 0.8rem;
+  justify-self: start;
+  align-self: flex-start;
 }
 
 .award-small {
@@ -779,9 +1093,8 @@
   object-fit: cover;
 }
 
-.shot-showcase img {
-  aspect-ratio: 16 / 7;
-  object-fit: cover;
+.shot-showcase {
+  background: #fff;
 }
 
 .project-art {

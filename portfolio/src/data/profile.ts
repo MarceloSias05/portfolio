@@ -44,9 +44,15 @@ export type ProjectEntry = {
     alt: Text
     /**
      * 'device' preserves a full phone mockup,
-     * 'showcase' runs the image full-bleed across the top of a wide card.
+     * 'showcase' runs the whole image, uncropped, across the top of a wide card.
      */
     fit: 'device' | 'showcase'
+  }
+  /** iPhone screens: three on the card, all of them in a viewer that opens on click. */
+  gallery?: {
+    screens: { src: string; caption: Text }[]
+    /** Indexes of the screens shown on the card, left to right. */
+    cover: [number, number, number]
   }
 }
 
@@ -152,6 +158,7 @@ export const cerca = {
   ),
   dates: tx('Sept 2026 – Dec 2026', 'Sept 2026 – Dic 2026'),
   profileLink: 'https://www.eccchicago.org/2026-startup-to-1000.html#arnoldo',
+  programLink: 'https://www.eccchicago.org/',
   pitch: {
     id: 'w32D_Z2Fxa8',
     label: tx('Play the week-2 pitch', 'Ver el pitch de la semana 2'),
@@ -234,6 +241,7 @@ export const experience: ExperienceEntry[] = [
   },
   {
     company: 'Everyone Can Code + Create Chicago',
+    logo: '/logos/ecc.jpg',
     org: tx('City of Chicago, Apple & JPMorgan Chase', 'City of Chicago, Apple y JPMorgan Chase'),
     role: tx('App Accelerator — Team Lead, Cerca', 'App Accelerator — Team Lead, Cerca'),
     dates: tx('Sept 2026 – Dec 2026', 'Sept 2026 – Dic 2026'),
@@ -437,13 +445,18 @@ export const projects: ProjectEntry[] = [
     role: tx('iOS Developer · intelligence & personalization · team of 3', 'iOS Developer · inteligencia y personalización · equipo de 3'),
     dates: tx('Apr 2026', 'Abr 2026'),
     award: tx('1st place · Local stage — earned the spot at Nationals', '1.er lugar · Etapa local — pase al Nacional'),
-    image: {
-      src: '/projects/luma.jpg',
-      alt: tx(
-        'Lūma welcome, home check-in and patterns screens',
-        'Pantallas de bienvenida, check-in en inicio y patrones de Lūma',
-      ),
-      fit: 'device',
+    gallery: {
+      screens: [
+        { src: '/projects/luma/hello.jpg', caption: tx('A welcome that asks for nothing.', 'Una bienvenida que no pide nada.') },
+        { src: '/projects/luma/reasons.jpg', caption: tx('What brought you here — no wrong answers.', 'Qué te trajo aquí, sin respuestas incorrectas.') },
+        { src: '/projects/luma/name.jpg', caption: tx('A nickname, your name, or nothing.', 'Un apodo, tu nombre o nada.') },
+        { src: '/projects/luma/notify.jpg', caption: tx('Notifications only when they matter.', 'Notificaciones solo cuando valen la pena.') },
+        { src: '/projects/luma/mood.jpg', caption: tx('A first check-in before you enter.', 'Un primer check-in antes de entrar.') },
+        { src: '/projects/luma/home.jpg', caption: tx('Home: daily check-in and the patterns behind it.', 'Inicio: check-in diario y los patrones detrás.') },
+        { src: '/projects/luma/diary.jpg', caption: tx('Your diary, day by day.', 'Tu diario, día a día.') },
+        { src: '/projects/luma/patterns.jpg', caption: tx('Mood against sleep and screen time.', 'Ánimo frente a sueño y tiempo en pantalla.') },
+      ],
+      cover: [0, 5, 7],
     },
     link: {
       label: tx('Read the LinkedIn post', 'Leer el post en LinkedIn'),

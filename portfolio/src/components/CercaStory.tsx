@@ -41,7 +41,11 @@ export function CercaStory() {
             </div>
             <div>
               <dt>{t(ui.cerca.program)}</dt>
-              <dd>{t(cerca.program)}</dd>
+              <dd>
+                <a className="inline-link" href={cerca.programLink} target="_blank" rel="noreferrer">
+                  {t(cerca.program)}
+                </a>
+              </dd>
             </div>
             <div>
               <dt>{t(ui.cerca.dates)}</dt>

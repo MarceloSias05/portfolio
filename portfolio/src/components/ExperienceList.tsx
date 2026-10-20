@@ -7,7 +7,7 @@ export function ExperienceList({ entries }: { entries: ExperienceEntry[] }) {
   return (
     <div className="xp-list">
       {entries.map((xp) => (
-        <Reveal className="xp-item" key={xp.company + xp.dates.en}>
+        <Reveal className={xp.link ? 'xp-item has-link' : 'xp-item'} key={xp.company + xp.dates.en}>
           <div className="xp-meta">
             {xp.logo ? (
               <img className="org-logo" src={xp.logo} alt="" aria-hidden="true" />
@@ -41,7 +41,7 @@ export function ExperienceList({ entries }: { entries: ExperienceEntry[] }) {
               </div>
             )}
             {xp.link && (
-              <a className="btn btn-link" href={xp.link.href} target="_blank" rel="noreferrer">
+              <a className="btn btn-link card-link" href={xp.link.href} target="_blank" rel="noreferrer">
                 {t(xp.link.label)} <span aria-hidden="true">↗</span>
               </a>
             )}

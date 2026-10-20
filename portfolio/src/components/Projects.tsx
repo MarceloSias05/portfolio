@@ -1,6 +1,7 @@
 import { motion } from 'motion/react'
 import { projects, type ProjectEntry } from '../data/profile'
 import { useLang } from '../i18n'
+import { ProjectGallery } from './ProjectGallery'
 import { ProjectVideo } from './ProjectVideo'
 import { Reveal } from './Reveal'
 
@@ -38,6 +39,7 @@ function ProjectMedia({ p }: { p: ProjectEntry }) {
     return <ProjectVideo id={p.video.id} label={t(p.video.label)} poster={p.video.poster} />
   }
   if (p.art === 'ecg') return <EcgArt />
+  if (p.gallery) return <ProjectGallery name={p.name} gallery={p.gallery} />
   if (p.image) {
     return (
       <div className={`project-shot shot-${p.image.fit}`}>
@@ -55,7 +57,7 @@ export function Projects() {
       {projects.map((p) => (
         // The reveal owns the entrance transform, so the hover lift lives on the inner card.
         <Reveal className={['project-cell', p.wide && 'wide'].filter(Boolean).join(' ')} key={p.name}>
-          <article className={['project-card', p.wide && 'wide'].filter(Boolean).join(' ')}>
+          <article className={['project-card', p.wide && 'wide', p.link && 'has-link'].filter(Boolean).join(' ')}>
             <ProjectMedia p={p} />
             <div className="project-body">
               <p className="project-context">
@@ -78,7 +80,8 @@ export function Projects() {
                 ))}
               </div>
               {p.link && (
-                <a className="btn btn-link" href={p.link.href} target="_blank" rel="noreferrer">
+                // Its hit area stretches over the whole card (see .card-link).
+                <a className="btn btn-link card-link" href={p.link.href} target="_blank" rel="noreferrer">
                   {t(p.link.label)} <span aria-hidden="true">↗</span>
                 </a>
               )}
