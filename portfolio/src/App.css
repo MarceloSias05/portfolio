@@ -334,7 +334,10 @@
   line-height: 1.12;
   letter-spacing: -0.035em;
   font-weight: 600;
-  max-width: 22ch;
+  max-width: 24ch;
+  margin-inline: auto;
+  text-align: center;
+  text-wrap: balance;
 }
 
 /* ---------- stats ---------- */
@@ -389,6 +392,11 @@
   .stat-card {
     min-height: 0;
   }
+}
+
+/* keeps each half of the hero eyebrow on one line */
+.nowrap {
+  white-space: nowrap;
 }
 
 /* ---------- cerca ---------- */
@@ -589,7 +597,7 @@
     display: block;
     width: min(260px, 70%);
     border-radius: 32px;
-    margin-bottom: 1.75rem;
+    margin: 0 auto 1.75rem;
     box-shadow:
       0 0 0 6px #1d1d1f,
       0 0 0 7px #3a3a3c,

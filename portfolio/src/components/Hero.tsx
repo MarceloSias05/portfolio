@@ -35,7 +35,8 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ ...rise, delay: 0.1 }}
         >
-          {t(ui.hero.eyebrow)} · {t(profile.location)}
+          <span className="nowrap">{t(ui.hero.eyebrow)} ·</span>{' '}
+          <span className="nowrap">{t(profile.location)}</span>
         </motion.p>
         {/* Keyed by language so the headline plays again when it changes. */}
         <h1 className="hero-title" key={lang}>

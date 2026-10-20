@@ -428,31 +428,40 @@ export const projects: ProjectEntry[] = [
     ],
   },
   {
-    name: 'Eco',
+    name: 'Lūma',
     tagline: tx(
-      'Human-centered AI for mental health — connecting digital habits with emotional well-being.',
-      'IA centrada en las personas para la salud mental — conecta los hábitos digitales con el bienestar emocional.',
+      'A mental health companion for iOS that connects your digital habits with your mood — entirely on your phone.',
+      'Una app de acompañamiento en salud mental para iOS que conecta tus hábitos digitales con tu estado de ánimo, todo dentro de tu teléfono.',
     ),
-    context: tx('Swift Change Makers · local stage', 'Swift Change Makers · etapa local'),
+    context: tx('Swift Change Makers · SwiftTec local stage', 'Swift Change Makers · etapa local SwiftTec'),
+    role: tx('iOS Developer · intelligence & personalization · team of 3', 'iOS Developer · inteligencia y personalización · equipo de 3'),
     dates: tx('Apr 2026', 'Abr 2026'),
     award: tx('1st place · Local stage — earned the spot at Nationals', '1.er lugar · Etapa local — pase al Nacional'),
     image: {
-      src: '/projects/eco.jpg',
+      src: '/projects/luma.jpg',
       alt: tx(
-        'Eco pattern view charting emotional state against daily habits',
-        'Vista de patrones de Eco que relaciona el estado emocional con los hábitos diarios',
+        'Lūma welcome, home check-in and patterns screens',
+        'Pantallas de bienvenida, check-in en inicio y patrones de Lūma',
       ),
       fit: 'device',
     },
-    stack: ['SwiftUI', 'Core ML', 'On-device AI'],
+    link: {
+      label: tx('Read the LinkedIn post', 'Leer el post en LinkedIn'),
+      href: 'https://www.linkedin.com/posts/marcelo-sias_iosdev-swiftui-ondeviceai-ugcPost-7507331620996247552-1oSR/',
+    },
+    stack: ['SwiftUI', 'Foundation Models', 'SwiftData', 'ActivityKit', 'WidgetKit', 'CryptoKit'],
     highlights: [
       tx(
-        'Goes beyond logging emotions: connects the dots between digital habits (sleep patterns, screen time) and emotional well-being.',
-        'Va más allá de registrar emociones: conecta los hábitos digitales (sueño, tiempo en pantalla) con el bienestar emocional.',
+        'Goes beyond “how do you feel today?”: pairs sleep and screen time with mood check-ins to surface patterns, with nothing leaving the device.',
+        'Va más allá de “¿cómo te sientes hoy?”: cruza sueño y tiempo en pantalla con check-ins de ánimo para mostrar patrones, sin que nada salga del dispositivo.',
       ),
       tx(
-        'Personalizes the experience from onboarding with a predictive model — 100% private and offline via Core ML.',
-        'Personaliza la experiencia desde el onboarding con un modelo predictivo — 100% privado y sin conexión con Core ML.',
+        'Owned the intelligence and personalization layer: an empathetic greeting generated 100% on-device with Apple Foundation Models (@Generable structured output, LanguageModelSession) and zero cloud calls.',
+        'Fui responsable de la capa de inteligencia y personalización: un saludo empático generado 100% en el dispositivo con Apple Foundation Models (salida estructurada con @Generable, LanguageModelSession) y cero llamadas a la nube.',
+      ),
+      tx(
+        'Onboarding and user state on SwiftData; wellness streaks as Live Activities and widgets (ActivityKit, WidgetKit); a Silent Support Circle that asks for help without words, with signals encrypted via CryptoKit.',
+        'Onboarding y estado del usuario con SwiftData; rachas de bienestar como Live Activities y widgets (ActivityKit, WidgetKit); un Círculo de Apoyo Silencioso para pedir ayuda sin palabras, con señales cifradas con CryptoKit.',
       ),
     ],
   },
