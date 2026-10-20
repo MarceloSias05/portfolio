@@ -17,7 +17,7 @@ export type ExperienceEntry = {
   logo?: string
   link?: ExternalLink
   /** A strip of photos that open full screen on click. */
-  photos?: { src: string; caption: Text }[]
+  photos?: { src: string; caption: Text; video?: string }[]
 }
 
 export type ProjectEntry = {
@@ -510,6 +510,11 @@ export const leadership: ExperienceEntry[] = [
       { src: '/seitc/bloomberg.jpg', caption: tx('Bloomberg Tech Lab on campus.', 'Bloomberg Tech Lab en el campus.') },
       { src: '/seitc/b-puzzled.jpg', caption: tx('Bloomberg B-Puzzled at Tec.', 'B-Puzzled de Bloomberg en el Tec.') },
       { src: '/seitc/bloomberg-team.jpg', caption: tx('With the Bloomberg team.', 'Con el equipo de Bloomberg.') },
+      {
+        src: '/seitc/softtek-poster.jpg',
+        video: '/seitc/softtek.mp4',
+        caption: tx('Day 1 at Softtek: a visit to their offices.', 'Día 1 en Softtek: visita a sus oficinas.'),
+      },
       { src: '/seitc/workshop.jpg', caption: tx('A workshop for the CS community.', 'Un taller para la comunidad de CS.') },
       { src: '/seitc/planning.jpg', caption: tx('The IT team planning logistics and registrations for upcoming events.', 'El equipo de TI planeando logística y registros para próximos eventos.') },
       { src: '/seitc/fetec.jpg', caption: tx('At FETEC.', 'En FETEC.') },

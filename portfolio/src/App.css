@@ -866,7 +866,8 @@
   right: clamp(0.5rem, 4vw, 3rem);
 }
 
-.viewer-photo img {
+.viewer-photo img,
+.viewer-photo video {
   display: block;
   max-width: min(88vw, 1100px);
   max-height: 74svh;
@@ -1364,6 +1365,32 @@
   background: var(--gray);
   cursor: zoom-in;
   scroll-snap-align: start;
+}
+
+.photo-strip-item {
+  position: relative;
+}
+
+/* the video is portrait; keep the building's sign in the 4:3 thumbnail */
+.photo-strip-item:has(.photo-strip-play) img {
+  object-position: center 18%;
+}
+
+.photo-strip-play {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  padding-left: 3px;
+  font-size: 0.95rem;
+  color: #fff;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .photo-strip-item img {

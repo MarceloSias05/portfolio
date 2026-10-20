@@ -4,7 +4,8 @@ import { AnimatePresence, motion, type PanInfo } from 'motion/react'
 import { ui } from '../data/ui'
 import { useLang, type Text } from '../i18n'
 
-export type LightboxItem = { src: string; caption: Text }
+/** `src` is the image, or the poster when the item is a `video`. */
+export type LightboxItem = { src: string; caption: Text; video?: string }
 
 type LightboxProps = {
   label: string
@@ -75,24 +76,35 @@ function Viewer({ label, items, index, onIndex, frame }: Omit<LightboxProps, 'in
   }
 
   const item = items[index]
+  const slide = {
+    custom: dir,
+    variants: {
+      enter: (d: number) => ({ x: `${d * 30}%`, opacity: 0 }),
+      center: { x: 0, opacity: 1 },
+      exit: (d: number) => ({ x: `${d * -30}%`, opacity: 0 }),
+    },
+    initial: 'enter',
+    animate: 'center',
+    exit: 'exit',
+    transition: { type: 'spring', bounce: 0, duration: 0.45 },
+  } as const
   const image = (
     <AnimatePresence initial={false} custom={dir} mode="popLayout">
-      <motion.img
-        key={index}
-        src={item.src}
-        alt={t(item.caption)}
-        draggable={false}
-        custom={dir}
-        variants={{
-          enter: (d: number) => ({ x: `${d * 30}%`, opacity: 0 }),
-          center: { x: 0, opacity: 1 },
-          exit: (d: number) => ({ x: `${d * -30}%`, opacity: 0 }),
-        }}
-        initial="enter"
-        animate="center"
-        exit="exit"
-        transition={{ type: 'spring', bounce: 0, duration: 0.45 }}
-      />
+      {item.video ? (
+        // Opened by a click, so it may start with sound.
+        <motion.video
+          key={index}
+          src={item.video}
+          poster={item.src}
+          aria-label={t(item.caption)}
+          controls
+          autoPlay
+          playsInline
+          {...slide}
+        />
+      ) : (
+        <motion.img key={index} src={item.src} alt={t(item.caption)} draggable={false} {...slide} />
+      )}
     </AnimatePresence>
   )
 
@@ -133,7 +145,7 @@ function Viewer({ label, items, index, onIndex, frame }: Omit<LightboxProps, 'in
       >
         <motion.div
           className="viewer-media"
-          drag={items.length > 1 ? 'x' : false}
+          drag={items.length > 1 && !item.video ? 'x' : false}
           dragConstraints={{ left: 0, right: 0 }}
           dragElastic={0.35}
           onDragEnd={onDragEnd}

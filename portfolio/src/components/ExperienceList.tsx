@@ -66,6 +66,11 @@ function PhotoStrip({ label, photos }: { label: string; photos: NonNullable<Expe
         {photos.map((p, i) => (
           <button key={p.src} type="button" className="photo-strip-item" onClick={() => setOpen(i)}>
             <img src={p.src} alt={t(p.caption)} loading="lazy" draggable={false} />
+            {p.video && (
+              <span className="photo-strip-play" aria-hidden="true">
+                ▶
+              </span>
+            )}
           </button>
         ))}
       </div>
