@@ -15,8 +15,8 @@ export const ui = {
     eyebrow: tx('Software Engineer', 'Software Engineer'),
     headline: tx('I build across iOS, web, cloud and AI.', 'Construyo en iOS, web, cloud e IA.'),
     lede: tx(
-      'Computer Science student at Tec de Monterrey, now at the Apple Developer Academy in Naples. From watsonx demos at IBM to national-winning Swift apps and multi-agent AI platforms.',
-      'Estudiante de Ciencias Computacionales en el Tec de Monterrey, hoy en la Apple Developer Academy en Nápoles. De demos de watsonx en IBM a apps en Swift ganadoras a nivel nacional y plataformas de IA multiagente.',
+      'Computer Science student at Tec de Monterrey, now at the Apple Developer Academy in Naples. From a clinical AI assistant on watsonx at IBM to national-winning Swift apps and multi-agent AI platforms.',
+      'Estudiante de Ciencias Computacionales en el Tec de Monterrey, hoy en la Apple Developer Academy en Nápoles. De un asistente clínico con IA en watsonx en IBM a apps en Swift ganadoras a nivel nacional y plataformas de IA multiagente.',
     ),
     primary: tx('See my work', 'Ver mi trabajo'),
     resume: tx('Download résumé', 'Descargar CV'),
@@ -32,7 +32,7 @@ export const ui = {
     leadership: { eyebrow: tx('Leadership', 'Liderazgo'), title: tx('Beyond the code.', 'Más allá del código.') },
     skills: { eyebrow: tx('Skills', 'Habilidades'), title: tx('What I work with.', 'Con qué trabajo.') },
     education: { eyebrow: tx('Education', 'Educación'), title: tx('Where I’m learning.', 'Dónde estoy aprendiendo.') },
-    credentials: tx('Certificates & awards', 'Certificados y premios'),
+    credentials: tx('Awards', 'Premios'),
   },
   cerca: {
     eyebrow: tx('Now building', 'Construyendo ahora'),

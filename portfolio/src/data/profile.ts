@@ -145,12 +145,12 @@ export const stats: Stat[] = [
 
 export const cerca = {
   tagline: tx(
-    'A native iOS app that keeps you close to the everyday lives of the people you love.',
-    'Una app nativa de iOS para no perderte la vida diaria de tus seres queridos.',
+    'A 100% native iOS app that keeps students abroad — 7.5M worldwide — close to the everyday lives of the people they love.',
+    'Una app 100% nativa de iOS para que quienes estudian en el extranjero — 7.5M en el mundo — no se pierdan la vida diaria de sus seres queridos.',
   ),
   intro: tx(
-    'My pitch was selected for Apple and JPMorgan Chase’s 12-week “Startup to 1000” accelerator, and I lead the team building it.',
-    'Mi pitch fue seleccionado para “Startup to 1000”, la aceleradora de 12 semanas de Apple y JPMorgan Chase, y lidero al equipo que la construye.',
+    'My pitch ranked #1 of 24 ideas in Apple and JPMorgan Chase’s 12-week “Startup to 1000” accelerator, and I lead the 4-person team building it.',
+    'Mi pitch quedó en el #1 de 24 ideas en “Startup to 1000”, la aceleradora de 12 semanas de Apple y JPMorgan Chase, y lidero al equipo de 4 personas que la construye.',
   ),
   role: tx('Team Lead', 'Team Lead'),
   program: tx(
@@ -226,38 +226,30 @@ export const experience: ExperienceEntry[] = [
     location: tx('Mexico', 'México'),
     highlights: [
       tx(
-        'Led 3 discovery sessions and live demos for B2B prospects in healthcare, manufacturing and finance, scoping watsonx proposals.',
-        'Dirigí 3 sesiones de discovery y demos en vivo para prospectos B2B de salud, manufactura y finanzas, definiendo propuestas de watsonx.',
-      ),
-      tx(
-        'Designed a clinical AI assistant with watsonx.ai integrating LLMs with real-time patient data, projected to cut physician documentation time by up to 75% and information-omission incidents by 59%.',
-        'Diseñé un asistente clínico con watsonx.ai que integra LLMs con datos de pacientes en tiempo real; se proyectó una reducción de hasta 75% en el tiempo de documentación médica y de 59% en omisiones de información.',
-      ),
-      tx(
-        'Built no-code agentic workflows in watsonx Orchestrate for client demos, and completed hands-on IBM labs provisioning infrastructure with Terraform on IBM Cloud and Red Hat OpenShift.',
-        'Construí flujos agénticos no-code en watsonx Orchestrate para demos con clientes, y completé labs prácticos de IBM aprovisionando infraestructura con Terraform en IBM Cloud y Red Hat OpenShift.',
+        'Projected up to 75% less physician documentation time and 59% fewer information-omission incidents by designing a clinical AI assistant on watsonx.ai that integrates LLMs with real-time patient data.',
+        'Diseñé un asistente clínico en watsonx.ai que integra LLMs con datos de pacientes en tiempo real, con una reducción proyectada de hasta 75% en el tiempo de documentación médica y de 59% en omisiones de información.',
       ),
     ],
-    stack: ['watsonx.ai', 'watsonx Orchestrate', 'LLMs', 'IBM Cloud', 'Red Hat OpenShift', 'Terraform'],
+    stack: ['watsonx.ai', 'watsonx Orchestrate', 'LLMs'],
   },
   {
     company: 'Everyone Can Code + Create Chicago',
     logo: '/logos/ecc.jpg',
     org: tx('City of Chicago, Apple & JPMorgan Chase', 'City of Chicago, Apple y JPMorgan Chase'),
-    role: tx('App Accelerator — Team Lead, Cerca', 'App Accelerator — Team Lead, Cerca'),
+    role: tx('Team Lead & iOS Developer, App Accelerator', 'Team Lead & iOS Developer, App Accelerator'),
     dates: tx('Sept 2026 – Dec 2026', 'Sept 2026 – Dic 2026'),
     location: tx('Chicago, IL (Remote)', 'Chicago, IL (Remoto)'),
     highlights: [
       tx(
-        'Selected for Apple and JPMorgan Chase’s 12-week “Startup to 1000” accelerator; shipping App 1.0 and 2.0 to the App Store across three Demo Days with a pitch deck and marketing funnel, targeting 1,000 users at launch.',
-        'Parte de “Startup to 1000”, la aceleradora de 12 semanas de Apple y JPMorgan Chase; lanzando App 1.0 y 2.0 en el App Store a lo largo de tres Demo Days, con pitch deck y embudo de marketing, con la meta de 1,000 usuarios en el lanzamiento.',
+        'Pitched Cerca, a 100% native iOS app that keeps students abroad (7.5M worldwide) close to loved ones; ranked #1 of 24 ideas and now leading a 4-person team.',
+        'Presenté Cerca, una app 100% nativa de iOS que mantiene a quienes estudian en el extranjero (7.5M en el mundo) cerca de sus seres queridos; quedó #1 de 24 ideas y hoy lidero un equipo de 4 personas.',
       ),
       tx(
-        'My pitch for Cerca was chosen among the top six ideas; teams were formed through a matching process and I lead the one building it.',
-        'Mi pitch de Cerca quedó entre las seis mejores ideas; los equipos se formaron con un proceso de matching y lidero el que la construye.',
+        'Shipping Cerca 1.0 and 2.0 to the App Store across 3 Demo Days of the 12-week program, targeting 1,000 users.',
+        'Lanzando Cerca 1.0 y 2.0 en el App Store a lo largo de 3 Demo Days del programa de 12 semanas, con la meta de 1,000 usuarios.',
       ),
     ],
-    stack: ['Swift', 'SwiftUI', 'Product', 'Go-to-market'],
+    stack: ['Swift', 'SwiftUI'],
     link: {
       label: tx('Accelerator profile', 'Perfil en la aceleradora'),
       href: 'https://www.eccchicago.org/2026-startup-to-1000.html#arnoldo',
@@ -271,21 +263,21 @@ export const experience: ExperienceEntry[] = [
     location: tx('Monterrey, MX', 'Monterrey, MX'),
     highlights: [
       tx(
-        'Cut graduate-admissions report preparation from ~2 weeks of manual Excel work to a ~3-minute automated run by building Alteryx, pandas and SQL pipelines that consolidate 1M+ SharePoint applicant records by program, modality and admission route.',
-        'Reduje la preparación del reporte de admisiones de posgrado de ~2 semanas de Excel manual a una ejecución automática de ~3 minutos, con pipelines en Alteryx, pandas y SQL que consolidan más de 1M de registros de SharePoint por programa, modalidad y vía de admisión.',
+        'Cut graduate-admissions report preparation from ~2 weeks of manual Excel work to a ~3-minute automated run by building Python (pandas), SQL and Alteryx ETL pipelines over 1M+ applicant records.',
+        'Reduje la preparación del reporte de admisiones de posgrado de ~2 semanas de Excel manual a una ejecución automática de ~3 minutos, con pipelines ETL en Python (pandas), SQL y Alteryx sobre más de 1M de registros de aspirantes.',
       ),
       tx(
-        'Automated validation that scores every applicant against their admission-route thresholds and flags each non-compliance with 100% traceability, used by admissions leadership across every Tec campus in Mexico.',
-        'Automaticé una validación que evalúa a cada aspirante contra los umbrales de su vía de admisión y marca cada incumplimiento con 100% de trazabilidad; la usa la dirección de admisiones en todos los campus del Tec en México.',
+        'Delivered 100% traceability of admission non-compliance across every Tec campus in Mexico by automating validation that scores each applicant against admission-route thresholds.',
+        'Logré 100% de trazabilidad de los incumplimientos de admisión en todos los campus del Tec en México, automatizando una validación que evalúa a cada aspirante contra los umbrales de su vía de admisión.',
       ),
     ],
-    stack: ['Alteryx', 'pandas', 'SQL', 'SharePoint'],
+    stack: ['Python', 'pandas', 'SQL', 'Alteryx'],
   },
   {
     company: 'Government of Nuevo León',
     org: tx('Secretariat of Social Development', 'Secretaría de Desarrollo Social'),
     logo: '/logos/nl.svg',
-    role: tx('Co-Leader / Software Developer', 'Co-Leader / Software Developer'),
+    role: tx('Co-Lead Software Developer', 'Co-Lead Software Developer'),
     dates: tx('Nov 2025 – Dec 2025', 'Nov 2025 – Dic 2025'),
     location: tx('Monterrey, MX', 'Monterrey, MX'),
     highlights: [
@@ -318,20 +310,20 @@ export const projects: ProjectEntry[] = [
       label: tx('Play the LeRe walkthrough', 'Ver el recorrido de LeRe'),
       poster: '/projects/lere.jpg',
     },
-    stack: ['Python', 'FastAPI', 'LangGraph', 'Pydantic', 'React', 'Docker', 'Google Cloud', 'PostgreSQL'],
+    stack: ['Python', 'FastAPI', 'LangGraph', 'PostgreSQL', 'React', 'TypeScript', 'GCP'],
     wide: true,
     highlights: [
       tx(
-        'Built a LangGraph + FastAPI multi-agent platform; 88% task success and 92% satisfaction in user testing.',
-        'Construí una plataforma multiagente con LangGraph + FastAPI; 88% de tareas completadas y 92% de satisfacción en pruebas de usuario.',
+        'Built a LangGraph + FastAPI multi-agent platform that fans out 4 parallel subagents to turn an idea into Banorte-compliant requirements, tech stack, milestones and diagrams; 88% task success and 92% satisfaction in user testing.',
+        'Construí una plataforma multiagente con LangGraph + FastAPI que reparte el trabajo entre 4 subagentes en paralelo para convertir una idea en requerimientos, tech stack, milestones y diagramas alineados a Banorte; 88% de tareas completadas y 92% de satisfacción en pruebas de usuario.',
       ),
       tx(
-        'Owned the Tech Stack agent end to end: two-phase generation with Pydantic-validated structured output and catalog-backed validation that rejects non-approved technologies and proposes valid alternatives.',
-        'Fui responsable del agente de Tech Stack de principio a fin: generación en dos fases con salida estructurada validada con Pydantic y validación contra catálogo que rechaza tecnologías no aprobadas y propone alternativas válidas.',
+        'Kept every recommendation within Banorte’s approved tech catalog by owning the Tech Stack agent (Pydantic structured output).',
+        'Mantuve cada recomendación dentro del catálogo tecnológico aprobado por Banorte como responsable del agente de Tech Stack (salida estructurada con Pydantic).',
       ),
       tx(
-        'Designed a provider-agnostic AI layer (Strategy + Factory) to hot-swap OpenRouter and Gemini models, streaming progress over Server-Sent Events; containerized the backend and React/nginx frontend with Docker and deployed on Google Cloud with PostgreSQL.',
-        'Diseñé una capa de IA agnóstica al proveedor (Strategy + Factory) para alternar modelos de OpenRouter y Gemini en caliente, con progreso en streaming vía Server-Sent Events; contenericé el backend y el frontend React/nginx con Docker y lo desplegué en Google Cloud con PostgreSQL.',
+        'Built a Strategy + Factory LLM layer to hot-swap OpenRouter and Gemini.',
+        'Construí una capa de LLM con Strategy + Factory para alternar OpenRouter y Gemini en caliente.',
       ),
     ],
   },
@@ -359,14 +351,6 @@ export const projects: ProjectEntry[] = [
         'Led the native iOS client: 120 Hz CoreBluetooth streaming with WebSocket fallback to FastAPI, JWT-secured roles, and a synthetic ECG generator for hardware-free testing.',
         'Lideré el cliente nativo de iOS: streaming por CoreBluetooth a 120 Hz con respaldo por WebSocket hacia FastAPI, roles protegidos con JWT y un generador de ECG sintético para probar sin hardware.',
       ),
-      tx(
-        'The team’s Random Forest classifier over 39 features reached 97.4% accuracy on the AFDB clinical benchmark.',
-        'El clasificador Random Forest del equipo, con 39 features, alcanzó 97.4% de precisión en el benchmark clínico AFDB.',
-      ),
-      tx(
-        'Built around a textile shirt with ECG electrodes at an estimated USD 50–80, versus USD 250–500 for commercial wearables.',
-        'Basado en una camiseta textil con electrodos de ECG, con un costo estimado de 50–80 USD frente a 250–500 USD de los wearables comerciales.',
-      ),
     ],
   },
   {
@@ -377,7 +361,7 @@ export const projects: ProjectEntry[] = [
     ),
     context: tx('Swift Change Makers · Enactus & Apple', 'Swift Change Makers · Enactus y Apple'),
     dates: tx('May 2026', 'May 2026'),
-    award: tx('1st place · National (60 teams, 12 iOS Labs)', '1.er lugar · Nacional (60 equipos, 12 iOS Labs)'),
+    award: tx('1st place · National (1st of 60 teams, 12 iOS Labs)', '1.er lugar · Nacional (1.º de 60 equipos, 12 iOS Labs)'),
     wide: true,
     image: {
       src: '/projects/mabe.jpg',
@@ -387,52 +371,56 @@ export const projects: ProjectEntry[] = [
       ),
       fit: 'showcase',
     },
-    stack: ['SwiftUI', 'SwiftData', 'Swift Charts', 'AVFoundation', 'Foundation Models', 'Core ML'],
+    stack: ['SwiftUI', 'SwiftData', 'Foundation Models', 'PDFKit', 'VecturaKit', 'NLContextualEmbedder', 'Core ML'],
     highlights: [
       tx(
-        'On-device generative AI with Foundation Models and vector search via Ventura Kit — private by default, no round trips to a server.',
-        'IA generativa en el dispositivo con Foundation Models y búsqueda vectorial con Ventura Kit — privada por defecto, sin viajes a un servidor.',
+        'Runs Apple Foundation Models 100% on-device with 21 tool-calling functions across employee, manager and HR roles — private by default, no round trips to a server.',
+        'Ejecuta Apple Foundation Models 100% en el dispositivo con 21 funciones de tool calling para los roles de empleado, gerente y RH — privada por defecto, sin viajes a un servidor.',
       ),
       tx(
-        'MIRA, the in-app assistant, answers policy questions around the clock and backs each reply with the real company document it came from.',
-        'MIRA, el asistente de la app, responde dudas de políticas a cualquier hora y respalda cada respuesta con el documento real de la empresa.',
-      ),
-      tx(
-        'TraceFlow gives every request a live status trail and audit log, paired with an operations dashboard of indicators, predictions and delay alerts.',
-        'TraceFlow da a cada solicitud un seguimiento en vivo y bitácora de auditoría, junto a un dashboard de operaciones con indicadores, predicciones y alertas de retraso.',
-      ),
-      tx(
-        'Approvals stay human: escalations route to HR with full context instead of the assistant deciding on its own.',
-        'Las aprobaciones siguen siendo humanas: los escalamientos llegan a RH con todo el contexto, en lugar de que el asistente decida.',
+        'On-device RAG over HR policy PDFs (PDFKit, VecturaKit, NLContextualEmbedder) with source citations, plus a Core ML model that predicts request resolution time.',
+        'RAG en el dispositivo sobre los PDFs de políticas de RH (PDFKit, VecturaKit, NLContextualEmbedder) con citas a la fuente, más un modelo de Core ML que predice el tiempo de resolución de cada solicitud.',
       ),
     ],
   },
   {
     name: 'Trionda',
     tagline: tx(
-      'SwiftUI app for FIFA World Cup visitors with offline peer-to-peer messaging.',
-      'App en SwiftUI para visitantes del Mundial de la FIFA con mensajería peer-to-peer sin conexión.',
+      'Offline SwiftUI app for FIFA World Cup visitors: group chat, location sharing, UWB finding and on-device itineraries.',
+      'App en SwiftUI sin conexión para visitantes del Mundial de la FIFA: chat grupal, ubicación compartida, búsqueda por UWB e itinerarios en el dispositivo.',
     ),
     context: tx('Changemakers Social Challenge · Enactus & Apple', 'Changemakers Social Challenge · Enactus y Apple'),
     dates: tx('Nov 2025', 'Nov 2025'),
     award: tx('1st place · Regional — advanced to National Finals', '1.er lugar · Regional — pase a la final nacional'),
-    image: {
-      src: '/projects/trionda.jpg',
-      alt: tx(
-        'Trionda on two iPhones: World Cup stadium list and match detail',
-        'Trionda en dos iPhone: lista de estadios del Mundial y detalle de partido',
-      ),
-      fit: 'device',
+    gallery: {
+      screens: [
+        { src: '/projects/trionda/home.jpg', caption: tx('Home: host countries and upcoming matches.', 'Inicio: países sede y próximos partidos.') },
+        { src: '/projects/trionda/match.jpg', caption: tx('Match detail, one tap to add it to Calendar.', 'Detalle del partido, a un toque de agregarlo al Calendario.') },
+        { src: '/projects/trionda/country.jpg', caption: tx('Host country profiles on MapKit.', 'Perfiles de los países sede en MapKit.') },
+        { src: '/projects/trionda/discover.jpg', caption: tx('Discover: places around the stadium city.', 'Descubrir: lugares en la ciudad sede.') },
+        { src: '/projects/trionda/itinerary.jpg', caption: tx('An itinerary streamed from on-device Foundation Models.', 'Un itinerario generado en streaming con Foundation Models en el dispositivo.') },
+        { src: '/projects/trionda/friends.jpg', caption: tx('Friends group: location, UWB and privacy without data.', 'Grupo de amigos: ubicación, UWB y privacidad sin datos móviles.') },
+        { src: '/projects/trionda/group.jpg', caption: tx('Join an offline group by scanning an expiring QR.', 'Únete a un grupo sin conexión escaneando un QR con caducidad.') },
+      ],
+      cover: [0, 4, 6],
     },
-    stack: ['SwiftUI', 'SwiftData', 'MultipeerConnectivity', 'MVVM'],
+    stack: ['SwiftUI', 'MultipeerConnectivity', 'NearbyInteraction', 'Foundation Models', 'Vision', 'Core ML'],
     highlights: [
       tx(
-        'Offline peer-to-peer messaging via MultipeerConnectivity — built for stadium crowds where networks fail.',
-        'Mensajería peer-to-peer sin conexión con MultipeerConnectivity — pensada para estadios llenos donde la red falla.',
+        'Reached National Finals with an offline app for FIFA World Cup visitors, built for stadium crowds where cellular networks fail.',
+        'Llegó a la final nacional con una app sin conexión para visitantes del Mundial de la FIFA, pensada para estadios llenos donde la red celular falla.',
       ),
       tx(
-        'Architected with MVVM and SwiftData for modular UI and local persistence.',
-        'Arquitectura MVVM con SwiftData para una UI modular y persistencia local.',
+        'MultipeerConnectivity group chat and location sharing over an encrypted MCSession, with groups joined by scanning an expiring QR code.',
+        'Chat grupal y ubicación compartida con MultipeerConnectivity sobre un MCSession cifrado; a los grupos se entra escaneando un código QR con caducidad.',
+      ),
+      tx(
+        'UWB finding with NearbyInteraction: peers exchange discovery tokens over the P2P channel and fall back to GPS when the device has no U1 chip.',
+        'Búsqueda por UWB con NearbyInteraction: los dispositivos intercambian tokens de descubrimiento por el canal P2P y recurren a GPS si el equipo no tiene chip U1.',
+      ),
+      tx(
+        'Foundation Models itineraries generated as @Generable structured output and streamed into the UI, plus a Vision + Core ML flag classifier on the live camera feed.',
+        'Itinerarios con Foundation Models generados como salida estructurada @Generable y mostrados en streaming, más un clasificador de banderas con Vision + Core ML sobre la cámara en vivo.',
       ),
     ],
   },
@@ -491,16 +479,20 @@ export const leadership: ExperienceEntry[] = [
     location: tx('Monterrey, MX', 'Monterrey, MX'),
     highlights: [
       tx(
-        'Built the partnership program for a 2,000+ student CS community — Bloomberg, Uber, Waymo, Capital One, IBM, Duolingo and EY.',
-        'Construí el programa de alianzas para una comunidad de CS de más de 2,000 estudiantes — Bloomberg, Uber, Waymo, Capital One, IBM, Duolingo y EY.',
+        'Built the industry partnership program for a 2,000+ student CS community — Bloomberg, Uber, Waymo, Capital One, IBM, Duolingo, EY, Softtek and Hey Banco.',
+        'Construí el programa de alianzas con la industria para una comunidad de CS de más de 2,000 estudiantes — Bloomberg, Uber, Waymo, Capital One, IBM, Duolingo, EY, Softtek y Hey Banco.',
       ),
       tx(
-        'Ran a Capital One–sponsored hackathon for 350+ students, from partner alignment to execution.',
-        'Organicé un hackathon patrocinado por Capital One para más de 350 estudiantes, desde la alineación con el patrocinador hasta la ejecución.',
+        'Opened recruiting channels via tech talks with Duolingo, Uber and EY, workshops, a 3-day Bloomberg campus visit and a Softtek HQ visit.',
+        'Abrí canales de reclutamiento con tech talks de Duolingo, Uber y EY, talleres, una visita de 3 días de Bloomberg al campus y una visita a las oficinas de Softtek.',
       ),
       tx(
-        'SEITC was named Sociedad Sobresaliente at Orgullo CSE — the highest recognition for a student association at Tec — closing the board’s term.',
-        'La SEITC fue nombrada Sociedad Sobresaliente en Orgullo CSE — el máximo reconocimiento para una sociedad de alumnos en el Tec — al cierre de la gestión.',
+        'Negotiated and executed a Capital One–sponsored hackathon for 350+ students, owning end-to-end logistics.',
+        'Negocié y ejecuté un hackathon patrocinado por Capital One para más de 350 estudiantes, a cargo de la logística de principio a fin.',
+      ),
+      tx(
+        'Co-organized SEITC’s Congress of Technology for 200 students, with sessions from IBM, NVIDIA, Snowflake and Hey Banco.',
+        'Co-organicé el Congreso de Tecnología de la SEITC para 200 estudiantes, con sesiones de IBM, NVIDIA, Snowflake y Hey Banco.',
       ),
     ],
     photos: [
@@ -521,54 +513,20 @@ export const leadership: ExperienceEntry[] = [
       { src: '/seitc/campus-event.jpg', caption: tx('At an international science competition, talking about the CS program with high school students.', 'En un concurso internacional de ciencias, platicando de la carrera con estudiantes de preparatoria.') },
     ],
   },
-  {
-    company: 'C.S. Student Association (SEITC)',
-    org: tx('Tecnológico de Monterrey', 'Tecnológico de Monterrey'),
-    logo: '/logos/seitc.png',
-    role: tx('Project Coordinator', 'Project Coordinator'),
-    dates: tx('Aug 2024 – Jul 2025', 'Ago 2024 – Jul 2025'),
-    location: tx('Monterrey, MX', 'Monterrey, MX'),
-    highlights: [
-      tx(
-        'Oversaw planning and execution of internal initiatives to improve the student experience, coordinating events and managing logistics for workshops across the CS community.',
-        'Coordiné la planeación y ejecución de iniciativas internas para mejorar la experiencia estudiantil, organizando eventos y la logística de talleres en la comunidad de CS.',
-      ),
-    ],
-  },
 ]
 
 export const skills: SkillGroup[] = [
   {
     label: tx('Languages', 'Lenguajes'),
-    items: ['Python', 'TypeScript', 'JavaScript', 'Swift', 'Kotlin', 'C++', 'SQL', 'MATLAB', 'Assembly'],
+    items: ['Python', 'C++', 'TypeScript', 'JavaScript', 'Swift', 'SQL', 'Kotlin'],
   },
   {
-    label: tx('Apple platforms', 'Plataformas Apple'),
-    items: [
-      'SwiftUI', 'SwiftData', 'Swift Charts', 'Core ML', 'Foundation Models',
-      'CoreBluetooth', 'MultipeerConnectivity', 'AVFoundation',
-    ],
+    label: tx('Databases & cloud', 'Bases de datos y cloud'),
+    items: ['MongoDB', 'PostgreSQL', 'Redis', 'Firebase', 'Docker', 'Kubernetes (basics)', 'Terraform', 'GCP'],
   },
   {
-    label: tx('AI', 'IA'),
-    items: [
-      'Multi-agent systems', 'RAG', 'Structured outputs (Pydantic)', 'Prompt engineering',
-      'watsonx.ai / Orchestrate', 'OpenRouter', 'Gemini',
-    ],
-  },
-  {
-    label: tx('Frameworks & data', 'Frameworks y datos'),
-    items: [
-      'FastAPI', 'LangChain', 'LangGraph', 'React', 'Next.js', 'T3 Stack', 'Prisma',
-      'PostgreSQL', 'MongoDB', 'Redis', 'Firebase', 'pandas', 'Alteryx',
-    ],
-  },
-  {
-    label: tx('Cloud & DevOps', 'Cloud y DevOps'),
-    items: [
-      'Google Cloud (GCP)', 'IBM Cloud', 'Red Hat OpenShift', 'Kubernetes (fundamentals)',
-      'Terraform', 'Docker', 'GitHub Actions',
-    ],
+    label: tx('Frameworks & tools', 'Frameworks y herramientas'),
+    items: ['FastAPI', 'Node.js', 'Next.js', 'React', 'tRPC', 'Prisma', 'SwiftUI', 'LangGraph', 'pandas', 'Git', 'CI/CD'],
   },
   {
     label: tx('Spoken', 'Idiomas'),
@@ -581,9 +539,9 @@ export const education: EducationEntry[] = [
     school: 'Tecnológico de Monterrey',
     logo: '/logos/tec.png',
     program: tx('B.S. in Computer Science and Technology', 'Ingeniería en Tecnologías Computacionales'),
-    dates: tx('Expected graduation · Winter 2027', 'Graduación esperada · Invierno 2027'),
+    dates: tx('Expected Dec 2027', 'Graduación esperada · Dic 2027'),
     location: tx('Monterrey, MX', 'Monterrey, MX'),
-    detail: tx('GPA 90/100', 'Promedio 90/100'),
+    detail: tx('GPA 3.8/4.0', 'GPA 3.8/4.0'),
   },
   {
     school: 'Apple Developer Academy',
@@ -596,18 +554,6 @@ export const education: EducationEntry[] = [
 ]
 
 export const certifications: CertificationEntry[] = [
-  {
-    name: 'Machine Learning con Python',
-    issuer: 'Data Science Club at Tec',
-    date: tx('Aug 2024', 'Ago 2024'),
-    kind: 'certification',
-  },
-  {
-    name: 'Manejo de Bases de Datos',
-    issuer: 'Data Science Club at Tec',
-    date: tx('Aug 2024', 'Ago 2024'),
-    kind: 'certification',
-  },
   {
     name: 'Premio FRISA',
     issuer: 'FRISA — social entrepreneurship',
